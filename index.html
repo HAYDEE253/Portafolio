@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to top, #deeeef, #a9bfc6);
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 40px;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        footer {
+            padding: 10px;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .skills, .languages, .technologies {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .skill, .language, .technology {
+            text-align: center;
+            background: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            width: 150px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill:hover, .language:hover, .technology:hover {
+            background-color: #ddd;
+        }
+
+        .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .skills i, .languages i, .technologies i {
+            color: #333;
+        }
+
+        /* Animación para el fadeIn */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2em;
+            }
+
+            .skills, .languages, .technologies {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill, .language, .technology {
+                width: 80%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .btn {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .skills, .languages, .technologies {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .skill, .language, .technology {
+                width: 90%;
+            }
+        }
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            position: relative; /* Importante para posicionar la X dentro del modal */
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Ajustar la posición a la esquina superior derecha */
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .courses {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .course {
+            text-align: center;
+            background: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .course:hover {
+            background-color: #ddd;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio</h1>
+    </header>
+
+    <div class="container">
+        <h2>Sobre mí</h2>
+        <p>Hola, mi nombre es Haydee Barrera Santacruz, soy desarrolladora web junior apasionada por la tecnología y la programación. Me encanta aprender nuevas tecnologías y siempre busco mejorar mis habilidades.</p>
+
+        <h2>Proyectos</h2>
+        <ul>
+            <li><a href="#" class="btn" id="project1">Rendic</a></li>
+            <li><a href="#" class="btn" id="project2">Catálogo de joyas</a></li>
+            <li><a href="#" class="btn" id="project3">Sistema de ventas de autos</a></li>
+            <li><a href="#" class="btn" id="project4">Sistema de ventas de autos</a></li>
+        </ul>
+
+        <h2>Lenguajes que manejo</h2>
+        <div class="languages">
+            <div class="language">
+                <i class="fab fa-html5 icon"></i>
+                <h3>HTML</h3>
+                <p>Nivel básico</p>
+            </div>
+            <div class="language">
+                <i class="fab fa-php icon"></i>
+                <h3>PHP</h3>
+                <p>Nivel básico</p>
+            </div>
+            <div class="language">
+                <i class="fas fa-database icon"></i>
+                <h3>SQL</h3>
+                <p>Nivel básico</p>
+            </div>
+            <div class="language">
+                <i class="fab fa-css3-alt icon"></i>
+                <h3>CSS</h3>
+                <p>Nivel básico</p>
+            </div>
+            <div class="language">
+                <i class="fab fa-js icon"></i>
+                <h3>JavaScript</h3>
+                <p>Nivel básico</p>
+            </div>
+            <div class="language">
+                <i class="fab fa-python icon"></i>
+                <h3>Python</h3>
+                <p>Nivel básico</p>
+            </div>
+            <div class="language">
+                <i class="fab fa-cuttlefish icon"></i>
+                <h3>C#</h3>
+                <p>Nivel básico</p>
+            </div>
+        </div>
+
+        <h2>Tecnologías que domino</h2>
+        <div class="technologies">
+            <div class="technology">
+                <i class="fab fa-react icon"></i>
+                <h3>React</h3>
+                <p>Desarrollo de interfaces interactivas y reutilizables.</p>
+            </div>
+            <div class="technology">
+                <i class="fab fa-node icon"></i>
+                <h3>Node.js</h3>
+                <p>Desarrollo backend con JavaScript.</p>
+            </div>
+            <div class="technology">
+                <i class="fas fa-database icon"></i>
+                <h3>MySQL</h3>
+                <p>Gestión de bases de datos relacionales.</p>
+            </div>
+            <div class="technology">
+                <i class="fab fa-git icon"></i>
+                <h3>Git</h3>
+                <p>Control de versiones y trabajo colaborativo.</p>
+            </div>
+            <div class="technology">
+                <i class="fab fa-github icon"></i>
+                <h3>GitHub</h3>
+                <p>Control de versiones y trabajo colaborativo.</p>
+            </div>
+            <div class="technology">
+                <i class="fab fa-docker icon"></i>
+                <h3>Docker</h3>
+                <p>Control de versiones y trabajo colaborativo.</p>
+            </div>
+        </div>
+
+        
+
+        <h2>Habilidades Blandas</h2>
+        <div class="skills">
+            <div class="skill">
+                <i class="fas fa-comments icon"></i>
+                <h3>Comunicación</h3>
+                <p>Capacidad para transmitir ideas de manera clara y efectiva.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-users icon"></i>
+                <h3>Trabajo en equipo</h3>
+                <p>Disposición para colaborar con otros en proyectos conjuntos.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-lightbulb icon"></i>
+                <h3>Resolución de problemas</h3>
+                <p>Habilidad para identificar y solucionar problemas de forma creativa.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-lightbulb icon"></i>
+                <h3>proactiva</h3>
+                <p>Habilidad para identificar y solucionar problemas de forma creativa.</p>
+            </div>
+        </div>
+
+        <h2>Cursos Tomados</h2>
+    <div class="courses">
+        <div class="course">
+            <h3>Desarrollo Web con HTML, CSS y JavaScript</h3>
+            <p>Curso donde aprendí los fundamentos del desarrollo web, diseño responsivo y animaciones.</p>
+         </div>
+            <div class="course">
+                <h3>Introducción a Python</h3>
+                <p>Curso enfocado en lógica de programación, estructuras de datos y desarrollo de pequeños proyectos.</p>
+            </div>
+            <div class="course">
+                <h3>Fundamentos de Bases de Datos con MySQL</h3>
+                <p>Aprendí a diseñar, consultar y optimizar bases de datos relacionales.</p>
+        </div>
+
+        <h2>Contacto</h2>
+        <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:haydee@example.com">haydeebarrerasantacruz@gmail.com</a></p>
+        <p>Sígueme en GitHub:</p>
+        <a href="https://github.com/tu-usuario" target="_blank">
+            <i class="fab fa-github" style="font-size: 30px; color: black;"></i>
+        </a>
+
+        <h2>Contacto</h2>
+        <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:haydee@example.com">haydeebarrerasantacruz@gmail.com</a></p>
+        <p>Sígueme en GitHub:</p>
+        <a href="https://github.com/tu-usuario" target="_blank">
+            <i class="fab fa-github" style="font-size: 30px; color: black;"></i>
+        </a>
+      
+</div>      
+    </div>  
+
+    <footer>
+        &copy; 2025 Mi Portafolio
+    </footer>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Descripción del Proyecto</h2>
+            <p id="modalDescription">Aquí va la descripción del proyecto...</p>
+        </div>
+    </div>
+
+    <script>
+        // Obtener el modal
+        var modal = document.getElementById("myModal");
+
+        // Obtener los botones de los proyectos
+        var project1 = document.getElementById("project1");
+        var project2 = document.getElementById("project2");
+        var project3 = document.getElementById("project3");
+
+        // Obtener el elemento <span> que cierra el modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Función para abrir el modal con la descripción del proyecto
+        function openModal(description) {
+            var modalDescription = document.getElementById("modalDescription");
+            modalDescription.textContent = description;
+            modal.style.display = "block";
+        }
+
+        // Asignar descripciones a los proyectos
+        project1.onclick = function() {
+            openModal("Este es el Proyecto 1. En este proyecto desarrollé una aplicación web utilizando HTML, CSS y JavaScript.");
+        }
+
+        project2.onclick = function() {
+            openModal("Este es el Proyecto 2. En este proyecto implementé un sistema de gestión de base de datos con Python y MySQL.");
+        }
+
+        project3.onclick = function() {
+            openModal("Este es el Proyecto 3. Este proyecto incluye un diseño interactivo con animaciones utilizando JavaScript y CSS.");
+        }
+
+        // Cuando el usuario hace clic en <span> (x), cierra el modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cuando el usuario hace clic fuera del modal, también lo cierra
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
+
