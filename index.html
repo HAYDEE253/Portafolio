@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to top, #deeeef, #a9bfc6);
+            background: linear-gradient(to top, #ad6b6b, #ccb1b4);
         }
 
         header {
@@ -32,7 +32,7 @@
             max-width: 1000px;
             margin: 20px auto;
             padding: 40px;
-            background: rgb(255, 255, 255);
+            background: rgb(242, 227, 227);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             transition: transform 0.3s ease;
@@ -58,6 +58,7 @@
 
         h2 {
             font-size: 2em;
+            text-align: center;
             margin-bottom: 10px;
             color: #333;
         }
@@ -72,7 +73,7 @@
         }
 
         footer {
-            padding: 10px;
+            padding: 35px;
             background: #333;
             color: white;
             text-align: center;
@@ -230,6 +231,76 @@
         .course:hover {
             background-color: #ddd;
         }
+        .contact-container {
+            background: #e0e0e0;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .email {
+            display: block;
+            font-size: 1.2em;
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        
+        .email:hover {
+            color: #007bff;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #007bff;
+        }
+        
+        .social-links i {
+            font-size: 1.5em;
+        }
+        .about-me {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px; /* Espacio entre la imagen y el texto */
+            flex-wrap: wrap; /* Para que sea responsive */
+        }
+        
+        .photo {
+            width: 200px; /* Puedes ajustar el tamaño de la imagen */
+            height: 200px;
+            border-radius: 50%; /* Esto hará que la imagen tenga forma ovalada */
+            object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+        }
+        
+        .about-me p {
+            flex: 1; /* Hace que el texto ocupe el resto del espacio */
+            font-size: 1.1em; /* Ajusta el tamaño del texto */
+            line-height: 1.6; /* Espaciado entre líneas */
+        }
+        .description {
+            font-size: 0.9em !important; /* Ajusta el tamaño de la letra para que sea más pequeña */
+            line-height: 1.6; /* Mejora el espacio entre las líneas para mejor legibilidad */
+        }
+        
         
     </style>
 </head>
@@ -240,16 +311,19 @@
 
     <div class="container">
         <h2>Sobre mí</h2>
-        <p>Hola, mi nombre es Haydee Barrera Santacruz, soy desarrolladora web junior apasionada por la tecnología y la programación. Me encanta aprender nuevas tecnologías y siempre busco mejorar mis habilidades.</p>
-
+        <div class="about-me">
+            <img src="imagen.jpg" alt="Foto de Haydee" class="photo">
+            <p class="description">Hola, mi nombre es Haydee Barrera Santacruz, soy desarrolladora web junior apasionada por la tecnología y la programación. Me gusta aprender constantemente y así poder mejorar mis habilidades para crear soluciones innovadoras y eficientes. Me motiva desarrollar proyectos que combinen funcionalidad y buen diseño, siempre con un enfoque en la experiencia del usuario. Me gustaría especializarme aún más en el desarrollo web, explorando nuevas tecnologías y herramientas para crear sitios y aplicaciones cada vez más dinámicas y eficientes. Busco crecer profesionalmente y contribuir con mi creatividad y conocimiento en cada proyecto en el que participo.</p>
+        </div>
+        <br><br><br>
         <h2>Proyectos</h2>
         <ul>
             <li><a href="#" class="btn" id="project1">Rendic</a></li>
             <li><a href="#" class="btn" id="project2">Catálogo de joyas</a></li>
             <li><a href="#" class="btn" id="project3">Sistema de ventas de autos</a></li>
-            <li><a href="#" class="btn" id="project4">Sistema de ventas de autos</a></li>
+            <li><a href="#" class="btn" id="project4">Sistema de ventas de una muebleria</a></li>
         </ul>
-
+        <br><br><br>
         <h2>Lenguajes que manejo</h2>
         <div class="languages">
             <div class="language">
@@ -288,24 +362,11 @@
                 <p>Nivel básico</p>
             </div>
         </div>
-
-        <h2>Tecnologías que domino</h2>
+        <br><br><br><br>
+        <h2>Conocimientos en estas tecnologías:</h2>
+        <br>
+        <h3>Colaboración y trabajo en equipo</h3>
         <div class="technologies">
-            <div class="technology">
-                <i class="fab fa-react icon"></i>
-                <h3>React</h3>
-                <p>Desarrollo de interfaces interactivas y reutilizables.</p>
-            </div>
-            <div class="technology">
-                <i class="fab fa-node icon"></i>
-                <h3>Node.js</h3>
-                <p>Desarrollo backend con JavaScript.</p>
-            </div>
-            <div class="technology">
-                <i class="fas fa-database icon"></i>
-                <h3>MySQL</h3>
-                <p>Gestión de bases de datos relacionales.</p>
-            </div>
             <div class="technology">
                 <i class="fab fa-git icon"></i>
                 <h3>Git</h3>
@@ -317,14 +378,78 @@
                 <p>Control de versiones y trabajo colaborativo.</p>
             </div>
             <div class="technology">
-                <i class="fab fa-docker icon"></i>
-                <h3>Docker</h3>
-                <p>Control de versiones y trabajo colaborativo.</p>
+                <i class="fab fa-trello icon"></i> 
+                <h3>Asana</h3>
+                <p>Herramienta de gestión de tareas y proyectos.</p>
             </div>
         </div>
-
+        <h3>Gestión de Bases de Datos</h3>
+        <div class="technologies">
+        <div class="technology">
+                <i class="fas fa-database icon"></i>
+                <h3>MySQL</h3>
+                <p>Gestión de bases de datos relacionales.</p>
+        </div>
+        <div class="technology">
+            <i class="fas fa-database icon"></i>
+            <h3>MySQL Workbench</h3>
+            <p>Herramienta de diseño y administración de bases de datos MySQL.</p>
+        </div>
+        <div class="technology">
+            <i class="fas fa-server icon"></i>
+            <h3>SQL Server Management Studio</h3>
+            <p>Entorno de gestión para bases de datos SQL Server.</p>
+        </div>
+        <div class="technology">
+            <i class="fas fa-database icon"></i>
+            <h3>MongoDB</h3>
+            <p>Base de datos NoSQL orientada a documentos.</p>
+        </div>
+    </div>
         
 
+        <h3>Editores de Código e IDEs</h3>
+        <div class="technologies">
+            <div class="technology">
+                <i class="fas fa-code icon"></i>
+                <h3>Visual Studio</h3>
+                <p>Entorno de desarrollo para aplicaciones .NET y más.</p>
+            </div>
+            <div class="technology">
+                <i class="fas fa-code icon"></i>
+                <h3>Visual Studio Code</h3>
+                <p>Editor de código ligero y extensible.</p>
+            </div>
+            <div class="technology">
+                <i class="fas fa-laptop-code icon"></i>
+                <h3>Apache NetBeans</h3>
+                <p>Entorno de desarrollo para Java y otras tecnologías.</p>
+            </div>
+        </div>
+        <h3>Otras Herramientas y Frameworks</h3>
+            <div class="technologies">
+            <div class="technology">
+                <i class="fas fa-network-wired icon"></i>
+                <h3>Cisco Packet Tracer</h3>
+                <p>Simulación y diseño de redes informáticas.</p>
+            </div>
+            <div class="technology">
+                <i class="fab fa-bootstrap icon"></i>
+                <h3>Bootstrap</h3>
+                <p>Framework CSS para diseño web responsivo.</p>
+            </div>
+            <div class="technology">
+                <i class="fab fa-docker icon"></i>
+                <h3>Docker</h3>
+                <p>Contenedores para desarrollo y despliegue.</p>
+            </div>
+            <div class="technology">
+                <i class="fab fa-node icon"></i>
+                <h3>Node.js</h3>
+                <p>Desarrollo backend con JavaScript.</p>
+            </div>
+        </div>
+        <br><br><br><br>
         <h2>Habilidades Blandas</h2>
         <div class="skills">
             <div class="skill">
@@ -348,41 +473,39 @@
                 <p>Habilidad para identificar y solucionar problemas de forma creativa.</p>
             </div>
         </div>
-
+        <br><br><br><br>
         <h2>Cursos Tomados</h2>
     <div class="courses">
         <div class="course">
-            <h3>Desarrollo Web con HTML, CSS y JavaScript</h3>
-            <p>Curso donde aprendí los fundamentos del desarrollo web, diseño responsivo y animaciones.</p>
+            <h3>Taller de creación y consumo de servicios REST en ANGULAR.</h3>
+            <p>Aprendizaje de integración de APIs REST en Angular mediante HTTPClient, manejo de datos JSON y buenas prácticas para comunicación con el backend.</p>
          </div>
             <div class="course">
-                <h3>Introducción a Python</h3>
-                <p>Curso enfocado en lógica de programación, estructuras de datos y desarrollo de pequeños proyectos.</p>
+                <h3>Curso basico de la terminal CLI: Command Line Interface.</h3>
+                <p>Introducción al uso de la terminal para gestionar archivos y ejecutar comandos, mejorando la eficiencia en la navegación y administración del sistema a través de la línea de comandos.</p>
             </div>
             <div class="course">
-                <h3>Fundamentos de Bases de Datos con MySQL</h3>
-                <p>Aprendí a diseñar, consultar y optimizar bases de datos relacionales.</p>
-        </div>
-
+                <h3>Taller de Microsoft Office Excel.</h3>
+                <p>Formación en el uso avanzado de herramientas de Microsoft Office, como Word, Excel y PowerPoint, para mejorar la productividad y eficiencia en la gestión de documentos, datos y presentaciones.</p>
+        </div>     
+    </div>  
+        <br><br><br><br>
         <h2>Contacto</h2>
-        <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:haydee@example.com">haydeebarrerasantacruz@gmail.com</a></p>
-        <p>Sígueme en GitHub:</p>
-        <a href="https://github.com/tu-usuario" target="_blank">
-            <i class="fab fa-github" style="font-size: 30px; color: black;"></i>
-        </a>
-
-        <h2>Contacto</h2>
-        <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:haydee@example.com">haydeebarrerasantacruz@gmail.com</a></p>
-        <p>Sígueme en GitHub:</p>
-        <a href="https://github.com/tu-usuario" target="_blank">
-            <i class="fab fa-github" style="font-size: 30px; color: black;"></i>
-        </a>
-      
-</div>      
+        <div class="contact-container">
+            <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a:</p>
+            <a href="mailto:haydeebarrerasantacruz@gmail.com" class="email">haydeebarrerasantacruz@gmail.com</a>
+        
+            <p>Sígueme en GitHub para que veas mis proyectos:</p>
+            <div class="social-links">
+                <a href="https://github.com/tu-usuario" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>    
     </div>  
 
     <footer>
-        &copy; 2025 Mi Portafolio
+        &copy; 2025 Portafolio de Haydee
     </footer>
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -400,6 +523,7 @@
         var project1 = document.getElementById("project1");
         var project2 = document.getElementById("project2");
         var project3 = document.getElementById("project3");
+        var project4 = document.getElementById("project4");
 
         // Obtener el elemento <span> que cierra el modal
         var span = document.getElementsByClassName("close")[0];
@@ -413,15 +537,19 @@
 
         // Asignar descripciones a los proyectos
         project1.onclick = function() {
-            openModal("Este es el Proyecto 1. En este proyecto desarrollé una aplicación web utilizando HTML, CSS y JavaScript.");
+            openModal("Plataforma Web para Estudiantes Foráneos y Arrendadores: Una página web que conecta a estudiantes foráneos con arrendadores, permitiendo a los estudiantes encontrar lugares para rentar de forma rápida y segura, mientras acceden a información útil como horarios y ubicaciones de servicios cercanos. Los arrendadores pueden publicar y gestionar fácilmente la renta de sus propiedades para alquiler.");
         }
 
         project2.onclick = function() {
-            openModal("Este es el Proyecto 2. En este proyecto implementé un sistema de gestión de base de datos con Python y MySQL.");
+            openModal("Página Web para Joyería: Una página web para una joyería que permite a los clientes ver las joyas disponibles, con detalles como precios, descripciones e imágenes. Además, cuenta con una sección para el administrador, donde puede agregar nuevas joyas, eliminar las que se han vendido y modificar información como precios, cantidades y descripciones.");
         }
 
         project3.onclick = function() {
-            openModal("Este es el Proyecto 3. Este proyecto incluye un diseño interactivo con animaciones utilizando JavaScript y CSS.");
+            openModal("Un sistema web dedicado a los empleados vendedores de una agencia de autos, donde pueden gestionar ventas, dar de baja vehículos vendidos y añadir nuevos autos disponibles para la venta, facilitando el proceso de gestión y seguimiento de inventario.");
+        }
+
+        project4.onclick = function() {
+            openModal("Un sistema web para una mueblería que permite a los empleados gestionar las ventas de muebles. Cada vez que se realiza una venta, el inventario del almacén se actualiza automáticamente, reflejando la cantidad disponible de cada mueble y facilitando el control de stock.");
         }
 
         // Cuando el usuario hace clic en <span> (x), cierra el modal
@@ -436,9 +564,5 @@
             }
         }
     </script>
-
-
 </body>
-
 </html>
-
